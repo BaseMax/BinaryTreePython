@@ -155,11 +155,9 @@ if __name__ == "__main__":
     print(form)
     g = gvz.Graph(format="png",filename="btree.gv")
     tree = make_form(combf, matrix[form])
-    # print(tree)
     draw(tree, g, form)
-    # print(g)
-    # print("number_of_nodes:", g.nodes)
-    print(g.source)
+
+    # print(g.source)
 
     my_tree = clean_tree(my_tree)
     node_added = 0
@@ -191,30 +189,5 @@ if __name__ == "__main__":
         print("")
         x = x + 1
 
-    # print("\n\n")
-    # for index, item in enumerate(my_tree):
-    #     print(index, item)
-
-    #     # if item[4] == None:
-    #     #     my_tree[index][4] = "invis"
-
-    #     if item[2] == 'y' and item[3] == '1':
-    #         print("found", item)
-
-    #     if item[2] == '0' or item[3] == '0':
-    #         del my_tree[index]
-    #         continue
-    #     if item[2] == '1' and item[3] == '1':
-    #         del my_tree[index]
-    #         continue
-    #     print(index, item)
-
-    # print("my_tree:", my_tree, "\n")
-
-    # for index, item in enumerate(my_tree):
-    #     if item[3] == 1:
-    #         print("reached to 1:", item[2])
-    #     print(item)
-    
     g.view()
 
