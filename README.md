@@ -9,6 +9,8 @@ I'm supervisor of this software to help in this research. (It will publish as ar
 ## Using
 
 ```
+$ git clone https://github.com/BaseMax/BinaryTreePython
+$ pip install graphiz
 $ python source.py
 0 1 2 or any other input
 ```
