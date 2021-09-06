@@ -15,7 +15,6 @@ matrix = {
 }
 
 value = input('Enter all of minterms in one line with space:')
-# value = "0 1 2"
 combf = list(map(lambda x: int(x),value.split()))
 combf.sort()
 
@@ -108,14 +107,6 @@ def draw(tree, g, form, h=1):
 
     return (1, 0) if type(tree) == int else (0, 0)
 
-def print_tree(tree):
-    print("============== Show tree")
-    index = 0
-    for value in tree:
-        print(index, value)
-        index = index + 1
-    print("==============")
-
 def clean_tree(tree):
     index = 0
 
@@ -124,18 +115,10 @@ def clean_tree(tree):
     removed = 0
 
     for item in tree:
-        # if item[4] == None:
-        #     tree[index][4] = "invis"
-
-        # if item[2] == 'y' and item[3] == '1':
-        #     print("found", item)
-
         if item[2] == '0' or item[3] == '0':
-            # print("remove ",index)
             del res_tree[index - removed]
             removed = removed + 1
         if item[2] == '1' and item[3] == '1':
-            # print("remove ",index)
             del res_tree[index - removed]
             removed = removed + 1
 
@@ -149,12 +132,9 @@ if __name__ == "__main__":
         for fulltree in matrix.items()
     }
     form = list(weight.keys())[list(weight.values()).index(max(weight.values()))]
-    print(form)
     g = gvz.Graph(format="png",filename="btree.gv")
     tree = make_form(combf, matrix[form])
     draw(tree, g, form)
-
-    print(g.source)
 
     my_tree = clean_tree(my_tree)
     node_added = 0
@@ -165,12 +145,12 @@ if __name__ == "__main__":
             y = 0
             reached_to_x = []
             for value2 in my_tree:
-                if value2[2] == value[2]:
+                if value2[0] == value[0]:
                     reached_to_x.append(value2)
                 y = y + 1
             if len(reached_to_x) == 1:
-                g.node('o'+str(100+node_added), '0') # style=None if r[0] else "invis")
-                g.edge(value[0], 'o'+str(100+node_added))
+                g.node('o'+str(100+node_added), '0')
+                g.edge(value[0], 'o'+str(100+node_added), style="dashed" if (reached_to_x[0][4] == 'invis') else None)
                 node_added = node_added + 1
         x = x + 1
 
