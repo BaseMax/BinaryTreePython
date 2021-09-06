@@ -1,5 +1,21 @@
 # Binary Tree Python
 
+A software to analyze a octal number and generate formula to produce graph. (Phd Project in mathematics field, Article)
+
+I'm supervisor of this software to help in this research. (It will publish as article)
+
+> Old version of this software available at [Binary Tree Diagram](https://github.com/BaseMax/BinaryTreeDiagram).
+
+## Using
+
+```
+$ python source.py
+0 1 2 or any other input
+```
+
+Output:
+![](examples/0-1-2.png)
+
 ## Examples
 
 ![](examples/1.jpg)
