@@ -117,12 +117,9 @@ def print_tree(tree):
     print("==============")
 
 def clean_tree(tree):
-    print("tree:", tree, "\n")
     index = 0
 
     res_tree = [item for item in tree]
-    print("length: ", len(tree))
-    print_tree(res_tree)
 
     removed = 0
 
@@ -162,26 +159,19 @@ if __name__ == "__main__":
     my_tree = clean_tree(my_tree)
     node_added = 0
 
-    print("my_tree:", my_tree, "\n")
     x = 0
     for value in my_tree:
-        print(x, value)
         if value[3] == '1':
-            print(value[2], "reached to 1")
             y = 0
             reached_to_x = []
             for value2 in my_tree:
                 if value2[2] == value[2]:
-                    print("\t", y, value2)
                     reached_to_x.append(value2)
                 y = y + 1
-            print("reached_to_x:", reached_to_x)
-            print("len(reached_to_x):", len(reached_to_x))
             if len(reached_to_x) == 1:
                 g.node('o'+str(100+node_added), '0') # style=None if r[0] else "invis")
                 g.edge(value[0], 'o'+str(100+node_added))
                 node_added = node_added + 1
-        print("")
         x = x + 1
 
     g.view()
