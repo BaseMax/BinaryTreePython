@@ -14,6 +14,7 @@ $ python source.py
 ```
 
 Output:
+
 ![](examples/0-1-2.png)
 
 ## Examples
