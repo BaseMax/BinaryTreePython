@@ -39,6 +39,18 @@ Output:
 
 ![](examples/9.jpg)
 
+![](examples/10.jpg)
+
+![](examples/11.jpg)
+
+![](examples/12.jpg)
+
+![](examples/13.jpg)
+
+![](examples/14.jpg)
+
+![](examples/15.jpg)
+
 ## Related Repositories
 
 - https://github.com/BaseMax/BinaryTreeDiagram
